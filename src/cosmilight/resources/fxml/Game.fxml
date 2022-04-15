@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Scene stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <root>
       <StackPane prefHeight="625.0" prefWidth="1250.0" style="-fx-background-color: black;">
          <children>
@@ -138,81 +138,53 @@
                      <children>
                         <HBox prefHeight="69.0" prefWidth="261.0" style="-fx-padding: 0 5;">
                            <children>
-                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="24.0" style="-fx-padding: 10;">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="24.0" style="-fx-padding: 10;" styleClass="color-water">
                                  <children>
-                                    <Text fill="#67a9fe" strokeType="OUTSIDE" strokeWidth="0.0" text="Water" wrappingWidth="44.05077314376831">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bold" text="Water" wrappingWidth="44.05077314376831">
                                        <FlowPane.margin>
                                           <Insets bottom="-5.0" />
                                        </FlowPane.margin>
                                     </Text>
-                                    <Text fill="#67a9fe" strokeType="OUTSIDE" strokeWidth="0.0" text="🌢🌢🌢⛌⛌">
-                                       <font>
-                                          <Font name="System Bold" size="22.0" />
-                                       </font>
-                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="🌢🌢🌢⛌⛌" />
                                  </children>
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </FlowPane>
-                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="56.0" prefWidth="0.0" style="-fx-padding: 10;">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="56.0" prefWidth="0.0" style="-fx-padding: 10;" styleClass="color-metal">
                                  <children>
-                                    <Text fill="#ff6666" strokeType="OUTSIDE" strokeWidth="0.0" text="Metal">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bold" text="Metal">
                                        <FlowPane.margin>
                                           <Insets bottom="-5.0" />
                                        </FlowPane.margin>
                                     </Text>
-                                    <Text fill="#ff6666" strokeType="OUTSIDE" strokeWidth="0.0" text="◆◆◆◆◆">
-                                       <font>
-                                          <Font name="System Bold" size="22.0" />
-                                       </font>
-                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="◆◆◆◆◆" />
                                  </children>
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </FlowPane>
-                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="0.0" style="-fx-padding: 10;">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="0.0" style="-fx-padding: 10;" styleClass="color-seed">
                                  <children>
-                                    <Text fill="#6aff94" strokeType="OUTSIDE" strokeWidth="0.0" text="Seeds">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bold" text="Seeds">
                                        <FlowPane.margin>
                                           <Insets bottom="-5.0" />
                                        </FlowPane.margin>
                                     </Text>
-                                    <Text fill="#6aff94" strokeType="OUTSIDE" strokeWidth="0.0" text="🞉🞉⛌">
-                                       <font>
-                                          <Font name="System Bold" size="22.0" />
-                                       </font>
-                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="🞉🞉⛌" />
                                  </children>
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </FlowPane>
-                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="74.0" style="-fx-padding: 10;">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="74.0" style="-fx-padding: 10;" styleClass="color-energy">
                                  <children>
-                                    <Text fill="#a17af4" strokeType="OUTSIDE" strokeWidth="0.0" text="Energy">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bold" text="Energy">
                                        <FlowPane.margin>
                                           <Insets bottom="-5.0" />
                                        </FlowPane.margin>
                                     </Text>
-                                    <Text fill="#a17af4" strokeType="OUTSIDE" strokeWidth="0.0" text="🟆⛌⛌">
-                                       <font>
-                                          <Font name="System Bold" size="22.0" />
-                                       </font>
-                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="🟆⛌⛌" />
                                  </children>
                                  <HBox.margin>
                                     <Insets />
@@ -223,10 +195,17 @@
                         <Pane HBox.hgrow="ALWAYS" />
                         <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="60.0" prefWidth="184.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;" text="Menu">
+                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
+                                 <graphic>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Menu" />
+                                       </children>
+                                    </VBox>
+                                 </graphic>
                               </Button>
                            </children>
                         </FlowPane>
@@ -237,39 +216,25 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="1000.0" style="-fx-padding: 10;">
                            <children>
-                              <Text fill="#2a72ad" strokeType="OUTSIDE" strokeWidth="0.0" text="The area title goes here." wrappingWidth="980.0">
-                                 <font>
-                                    <Font name="System Bold" size="22.0" />
-                                 </font>
-                              </Text>
-                              <Text fill="#b7b7b7" strokeType="OUTSIDE" strokeWidth="0.0" text="The description of the area goes into this location. This sentence is written most verbose, so as to give the visual impression of the true area description, which would be quite long. This is colored white when the player first enters the area, but is greyed out on subsequent visits." wrappingWidth="980.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="The area title goes here." wrappingWidth="980.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="faded" text="The description of the area goes into this location. This sentence is written most verbose, so as to give the visual impression of the true area description, which would be quite long. This is colored white when the player first enters the area, but is greyed out on subsequent visits." wrappingWidth="980.0">
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Developments in the area are written here. For example, say a Well built into this area is overflowing with water. This would be the place to describe that. Or, say an Event is occurring in the region, there'd be a description of that event here." wrappingWidth="980.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Developments in the area are written here. For example, say a Well built into this area is overflowing with water. This would be the place to describe that. Or, say an Event is occurring in the region, there'd be a description of that event here." wrappingWidth="980.0" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="165.0" prefWidth="250.0" style="-fx-padding: 10 0;">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;">
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                                  <graphic>
                                     <VBox prefHeight="0.0" prefWidth="0.0">
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Explore">
-                                             <font>
-                                                <Font name="System Bold" size="18.0" />
-                                             </font>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Explore">
                                              <VBox.margin>
                                                 <Insets bottom="-5.0" />
                                              </VBox.margin>
@@ -278,16 +243,8 @@
                                              <children>
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                    <children>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Costs" wrappingWidth="37.04098701477051">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fill="#6092cc" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤ ⬤ ⬤ ">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Costs" wrappingWidth="37.04098701477051" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⬤ ⬤ ⬤ " />
                                                    </children>
                                                 </HBox>
                                              </children>
@@ -299,17 +256,14 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;">
+                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                                  <graphic>
                                     <VBox prefHeight="0.0" prefWidth="0.0">
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Event">
-                                             <font>
-                                                <Font name="System Bold" size="18.0" />
-                                             </font>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Event">
                                              <VBox.margin>
                                                 <Insets bottom="-5.0" />
                                              </VBox.margin>
@@ -318,16 +272,8 @@
                                              <children>
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                    <children>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gives" wrappingWidth="37.04098701477051">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fill="#62cc83" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤ ⬤ ">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gives" wrappingWidth="37.04098701477051" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⬤ ⬤ " />
                                                       <Text fill="#cc6262" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
                                                          <font>
                                                             <Font size="15.0" />
@@ -337,16 +283,8 @@
                                                 </HBox>
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                    <children>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Costs" wrappingWidth="37.04098701477051">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fill="#8562cc" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Costs" wrappingWidth="37.04098701477051" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⬤" />
                                                    </children>
                                                 </HBox>
                                              </children>
@@ -358,17 +296,14 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;">
+                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                                  <graphic>
                                     <VBox alignment="CENTER_LEFT" prefHeight="1.0" prefWidth="166.0">
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Construct">
-                                             <font>
-                                                <Font name="System Bold" size="18.0" />
-                                             </font>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Construct">
                                              <VBox.margin>
                                                 <Insets />
                                              </VBox.margin>

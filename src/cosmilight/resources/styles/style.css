@@ -1,9 +1,15 @@
-@import url('../fonts/OpenSans-Medium.ttf');
-@import url('../fonts/OpenSans-Regular.ttf');
+@font-face {
+    font-family: "openSans";
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+    font-family: "openSansHeader";
+    src: url('../fonts/OpenSans-Medium.ttf');
+}
 
 Text {
     -fx-font-size: 15px;
-    -fx-font-family: 'Open Sans Regular', sans-serif;
+    -fx-font-family: "openSans", sans-serif;
     -fx-fill: white;
 }
 Button {
@@ -11,30 +17,38 @@ Button {
     -fx-effect:dropshadow(three-pass-box, #222A35, 0, 0, 0, 5px);
     -fx-translate-y:0;
     -fx-margin:0 0 10px 0;
+    -fx-text-fill: white;
 }
 Button:armed {
     -fx-effect:none;
     -fx-translate-y:5px;
 }
-.color-water {
-    -fx-fill: white;
+.color-water, .color-water * {
+    -fx-fill: #67a9fe;
 }
-.color-metal {
-    -fx-fill: white;
+.color-metal, .color-metal * {
+    -fx-fill: #ff6666;
 }
-.color-seed {
-    -fx-fill: white;
+.color-seed, .color-seed * {
+    -fx-fill: #6aff94;
 }
-.color-energy {
-    -fx-fill: white;
+.color-energy, .color-energy * {
+    -fx-fill: #a17af4;
+}
+.faded {
+    -fx-opacity: 0.6;
 }
 .header {
     -fx-font-size: 22px;
-    -fx-font-family: 'Open Sans Regular', sans-serif;
+    -fx-font-family: "openSansHeader", sans-serif;
     -fx-font-weight: bold;
 }
 .smallHeader {
     -fx-font-size: 18px;
+    -fx-font-family: "openSansHeader", sans-serif;
+    -fx-font-weight: bold;
+}
+.bold {
     -fx-font-weight: bold;
 }
 
