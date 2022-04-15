@@ -1,0 +1,31 @@
+.root {
+    -fx-background-color:rgb(15,20,25);
+}
+* {
+    -fx-font: 14px "Bahnschrift SemiBold";
+    -fx-font-weight: bold;
+}
+#counter {
+    -fx-fill:rgb(145,210,80);
+}
+#parent {
+    -fx-padding:10px;
+}
+#text {
+    -fx-background-color:rgb(255,0,0);
+}
+.button:armed {
+    -fx-effect:dropshadow(three-pass-box, rgb(35,45,55), 0, 0, 0, 0);
+    -fx-background-color:orange;
+    -fx-translate-y:5px;
+}
+
+
+
+
+
+
+
+
+
+

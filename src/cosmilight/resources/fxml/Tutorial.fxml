@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <root>
+      <ScrollPane fitToWidth="true" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
+         <content>
+            <VBox prefHeight="624.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="A note lies beside you." textAlignment="CENTER" wrappingWidth="339.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="You've awoken in a strange dark world. I understand your confusion, but don't panic. Try not make any noise (fortunately you don't have anyone to talk to); your light will be your best friend. For your anxiety, I recommend the following coping mechanisms:" wrappingWidth="339.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#62cc83" strokeType="OUTSIDE" strokeWidth="0.0" text="Take a walk." wrappingWidth="339.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The world you've found yourself in is massive. While you roam around, you'll find different kinds of places, all special in their own right. I personally recommend the forests, so peaceful and empty, but you might want to avoid the ruins. Things happen there. " wrappingWidth="339.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Though, do remember: with high risk comes high reward. " wrappingWidth="339.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#6092cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Brace yourself." wrappingWidth="339.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Run if the sky sparkles and the stars dance. But other than those strange events from time to time, you'll want to take note of the things that happen. Some of them might give you ideas on new discoveries, because I certainly won't be giving you those ideas." wrappingWidth="339.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Text>
+                  <Text fill="#8562cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Continue the journey." wrappingWidth="339.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Through your travels and experiences you'll find that you'll want to construct buildings, things that will help you on your journey. You'll need materials to construct your ideas, so hope you're lucky while exploring to find some. Like Metal, ever shiny, or perhaps a Seed or two, protected from the creatures that devoured the light." wrappingWidth="339.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="I wish you the best of luck, and may this twilight be broken by dawn." wrappingWidth="339.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="- Z" wrappingWidth="339.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </root>
+</Scene>
