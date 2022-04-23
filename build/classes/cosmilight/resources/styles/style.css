@@ -1,27 +1,56 @@
-.root {
-    -fx-background-color:rgb(15,20,25);
+@font-face {
+    font-family: "openSans";
+    src: url('resources/fonts/OpenSans-Regular.ttf');
 }
-* {
-    -fx-font: 14px "Bahnschrift SemiBold";
-    -fx-font-weight: bold;
+@font-face {
+    font-family: "openSansHeader";
+    src: url('../fonts/OpenSans-Medium.ttf');
 }
-#counter {
-    -fx-fill:rgb(145,210,80);
+
+Text {
+    -fx-font-size: 15px;
+    -fx-font-family: "openSans";
+    -fx-fill: white;
 }
-#parent {
-    -fx-padding:10px;
+Button {
+    -fx-background-color: #333F50;
+    -fx-effect:dropshadow(three-pass-box, #222A35, 0, 0, 0, 5px);
+    -fx-translate-y:0;
+    -fx-margin:0 0 10px 0;
+    -fx-text-fill: white;
 }
-#text {
-    -fx-background-color:rgb(255,0,0);
-}
-.button:armed {
-    -fx-effect:dropshadow(three-pass-box, rgb(35,45,55), 0, 0, 0, 0);
-    -fx-background-color:orange;
+Button:armed {
+    -fx-effect:none;
     -fx-translate-y:5px;
 }
-
-
-
+.color-water, .color-water * {
+    -fx-fill: #67a9fe;
+}
+.color-metal, .color-metal * {
+    -fx-fill: #ff6666;
+}
+.color-seed, .color-seed * {
+    -fx-fill: #6aff94;
+}
+.color-energy, .color-energy * {
+    -fx-fill: #a17af4;
+}
+.faded {
+    -fx-opacity: 0.6;
+}
+.header {
+    -fx-font-size: 22px;
+    -fx-font-family: "openSansHeader", sans-serif;
+    -fx-font-weight: bold;
+}
+.smallHeader {
+    -fx-font-size: 18px;
+    -fx-font-family: "openSansHeader", sans-serif;
+    -fx-font-weight: bold;
+}
+.bold {
+    -fx-font-weight: bold;
+}
 
 
 

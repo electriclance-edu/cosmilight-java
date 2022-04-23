@@ -30,18 +30,6 @@ public class StartController implements Initializable {
   
   private boolean music = false, cheats = false;
   
-  @Override
-  public void initialize(URL url, ResourceBundle rb){
-    initializeIcons();
-    System.out.println(musicIcons[0]);
-  }  
-  private void initializeIcons() {
-    musicIcons[0] = new Image(getClass().getResourceAsStream("resources/img/music_disabled.png"));
-    musicIcons[1] = new Image(getClass().getResourceAsStream("resources/img/music_enabled.png"));
-    cheatsIcons[0] = new Image(getClass().getResourceAsStream("resources/img/cheat_disabled.png"));
-    cheatsIcons[1] = new Image(getClass().getResourceAsStream("resources/img/cheat_enabled.png"));
-  }
-  
   @FXML private void startGame(ActionEvent event) throws Exception {
     Node source = (Node) event.getSource();
     Scene oldScene = (Scene) source.getScene();
@@ -59,20 +47,31 @@ public class StartController implements Initializable {
     stage.setTitle("Cosmilight");
     stage.show();
   }
-  
-  @FXML private void toggleMusic(MouseEvent event){
+  @FXML private void toggleMusic(MouseEvent event) {
     music = music ? false : true;
     musicIcon.setImage(musicIcons[music ? 1 : 0]);
   }
-  @FXML private void toggleCheats(MouseEvent event){
+  @FXML private void toggleCheats(MouseEvent event) {
     cheats = cheats ? false : true;
     cheatsIcon.setImage(cheatsIcons[cheats ? 1 : 0]);
     if (cheats) {
-      startButton.setText("~~~Start~~~");
+      startButton.setText("~Start~");
     } else {
       startButton.setText("Start");
     }
     
+  }
+  
+  @Override
+  public void initialize(URL url, ResourceBundle rb){
+    initializeIcons();
+    System.out.println(musicIcons[0]);
+  }  
+  private void initializeIcons() {
+    musicIcons[0] = new Image(getClass().getResourceAsStream("resources/img/music_disabled.png"));
+    musicIcons[1] = new Image(getClass().getResourceAsStream("resources/img/music_enabled.png"));
+    cheatsIcons[0] = new Image(getClass().getResourceAsStream("resources/img/cheat_disabled.png"));
+    cheatsIcons[1] = new Image(getClass().getResourceAsStream("resources/img/cheat_enabled.png"));
   }
   
 }

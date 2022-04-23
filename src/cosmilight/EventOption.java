@@ -6,5 +6,9 @@ package cosmilight;
 */
 
 public class EventOption {
-  
+  private String title;
+  private String desc;
+  private ResourceList cost;
+  private Condition[] conditions;
+  private Consequence[] consequences;
 }

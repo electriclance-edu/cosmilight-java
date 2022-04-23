@@ -6,7 +6,8 @@ package cosmilight;
 */
 
 public class Player {
-  
+  //stats
+  private int tilesExplored; //for Event aLonelyPath
   
   public Player(boolean cheats) {
     

@@ -6,5 +6,6 @@ package cosmilight;
 */
 
 public class Consequence {
-
+  private String type;
+  private String[] parameters;
 }

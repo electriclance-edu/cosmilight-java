@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Scene stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <root>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
          <content>
@@ -31,10 +31,7 @@
                                     <Image url="@../img/areas/placeholder_dawnMountain.png" />
                                  </image>
                               </ImageView>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="eventHeader" textAlignment="CENTER" wrappingWidth="339.0">
-                                 <font>
-                                    <Font name="System Bold" size="22.0" />
-                                 </font>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="eventHeader" textAlignment="CENTER" wrappingWidth="339.0">
                                  <StackPane.margin>
                                     <Insets bottom="10.0" />
                                  </StackPane.margin>
@@ -77,17 +74,14 @@
                         </FlowPane>
                         <VBox fx:id="event" alignment="CENTER" prefHeight="165.0" prefWidth="250.0" style="-fx-padding: 10 0;">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;">
+                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                                  <graphic>
                                     <VBox prefHeight="0.0" prefWidth="0.0">
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Water the trees.">
-                                             <font>
-                                                <Font name="System Bold" size="18.0" />
-                                             </font>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Water the trees.">
                                              <VBox.margin>
                                                 <Insets bottom="-5.0" />
                                              </VBox.margin>
@@ -97,9 +91,6 @@
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                    <children>
                                                       <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Costs">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
                                                          <HBox.margin>
                                                             <Insets right="5.0" />
                                                          </HBox.margin>
@@ -117,20 +108,17 @@
                                     </VBox>
                                  </graphic>
                                  <VBox.margin>
-                                    <Insets bottom="5.0" top="5.0" />
+                                    <Insets />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;">
+                              <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                                  <graphic>
                                     <VBox prefHeight="0.0" prefWidth="0.0">
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Break through the path.">
-                                             <font>
-                                                <Font name="System Bold" size="18.0" />
-                                             </font>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Break through the path.">
                                              <VBox.margin>
                                                 <Insets bottom="-5.0" />
                                              </VBox.margin>
@@ -188,7 +176,7 @@
                                     </VBox>
                                  </graphic>
                                  <VBox.margin>
-                                    <Insets bottom="5.0" top="5.0" />
+                                    <Insets />
                                  </VBox.margin>
                               </Button>
                            </children>
