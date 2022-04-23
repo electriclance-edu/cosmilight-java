@@ -193,7 +193,7 @@
                         <Pane HBox.hgrow="ALWAYS" />
                         <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="60.0" prefWidth="184.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0">
+                              <Button mnemonicParsing="false" onAction="#openMenu" prefHeight="36.0" prefWidth="82.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<Scene stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Scene stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmilight.MenuController">
    <VBox prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
       <children>
          <FlowPane alignment="BOTTOM_CENTER" prefHeight="246.0" prefWidth="400.0">
@@ -22,7 +22,7 @@
          </FlowPane>
          <FlowPane alignment="CENTER" prefHeight="104.0" prefWidth="400.0">
             <children>
-               <ImageView fx:id="musicIcon" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#toggleMusic" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="64.0" fitWidth="64.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../img/music_disabled.png" />
                   </image>

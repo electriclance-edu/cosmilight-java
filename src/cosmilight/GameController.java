@@ -10,9 +10,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Bea
- */
+* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
+* @date Creation: 4/23/2022
+*/
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +20,21 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GameController {
-    @FXML private void openConstruction() throws Exception {
+  @FXML private void openConstruction() throws Exception {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/ConstructionMenu.fxml"));
     Stage stage = new Stage();
     Scene scene = loader.load();
     stage.setScene(scene);
-    stage.setTitle("Cosmilight");
+    stage.setTitle("Game Controller");
+    stage.show();
+  }
+  
+  @FXML private void openMenu() throws Exception {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/pauseMenu.fxml"));
+    Stage stage = new Stage();
+    Scene scene = loader.load();
+    stage.setScene(scene);
+    stage.setTitle("Pause Menu");
     stage.show();
   }
 }
