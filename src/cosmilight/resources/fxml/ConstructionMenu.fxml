@@ -14,7 +14,7 @@
          <content>
             <VBox prefHeight="625.0" prefWidth="402.0" style="-fx-background-color: #0E1118;">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Constructions" wrappingWidth="162.04833984375" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Constructions" wrappingWidth="202.04833984375" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select one to construct it using your resources." wrappingWidth="370.810546875">
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -70,7 +70,7 @@
                         </VBox>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </FlowPane>
                   <FlowPane prefHeight="236.0" prefWidth="372.0" style="-fx-background-color: rgba(80,110,130,0.25);">
@@ -120,7 +120,7 @@
                         </VBox>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -130,7 +130,7 @@
                      <children>
                         <VBox>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Construction Title 2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="smallHeader" text="Construction Title 3" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="faded" text="Produces:">
                                  <VBox.margin>
                                     <Insets top="5.0" />
@@ -173,7 +173,7 @@
                         </VBox>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <VBox.margin>
                         <Insets top="20.0" />
