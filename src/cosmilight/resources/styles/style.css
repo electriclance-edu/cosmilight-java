@@ -57,8 +57,12 @@ ScrollPane {
     -fx-font-family: 'Rubik SemiBold', sans-serif;
     -fx-font-weight: bold;
 }
-
-
+.bg-glass {
+    -fx-background-image:url("..img/glass.png");
+}
+.bg-darkNormal {
+    -fx-background-color: #0E1118;
+}
 
 
 
