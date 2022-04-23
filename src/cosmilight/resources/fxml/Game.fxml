@@ -216,7 +216,7 @@
                            <content>
                               <VBox prefHeight="200.0" prefWidth="950.0" style="-fx-padding: 10;">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Area title." wrappingWidth="960.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="I am a change :flushed:" wrappingWidth="960.0">
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
