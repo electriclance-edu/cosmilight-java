@@ -56,10 +56,16 @@ public class GameController implements Initializable {
   @FXML private void hideDarkBg() {
     darkBg.setVisible(false);
   }
+  
+  private void generateTile(int x, int y) {
+    int row = x;
+    int column = y;
+  }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     amogus.getChildren().add(DisplayManager.generateIsotile());
+    
     menus[0] = pauseMenu;
     menus[1] = constructionsMenu;
     menus[2] = eventsMenu;

@@ -5,11 +5,7 @@
         <group>
             <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/GameController.java</file>
             <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/DisplayManager.java</file>
-            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/StartController.java</file>
-            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/Game.java</file>
-            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/World.java</file>
-            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/Tile.java</file>
-            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/resources/fxml/Events.xml</file>
+            <file>file:/C:/Users/63915/Documents/NetBeansProjects/Cosmilight/src/cosmilight/Event.java</file>
         </group>
     </open-files>
 </project-private>
