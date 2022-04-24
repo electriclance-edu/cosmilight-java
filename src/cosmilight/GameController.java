@@ -29,11 +29,13 @@ public class GameController implements Initializable {
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
-    new DisplayManager().openWindow("resources/fxml/ConstructionMenu.fxml","Construction",false);
+    openWindow("constructionsMenu");
   }
-  
   @FXML private void openPauseMenu() throws Exception {
-    new DisplayManager().openWindow("resources/fxml/pauseMenu.fxml","Pause Menu",false);
+    openWindow("pauseMenu");
+  }
+  @FXML private void openExploreMenu() throws Exception {
+    openWindow("eventsMenu");
   }
   
   private void openWindow(String windowId) {

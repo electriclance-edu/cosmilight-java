@@ -234,7 +234,7 @@
                         </ScrollPane>
                         <VBox alignment="CENTER" prefHeight="165.0" prefWidth="250.0" style="-fx-padding: 10 0;">
                            <children>
-                              <Button fx:id="exploreButton" mnemonicParsing="false" prefHeight="0.0" prefWidth="200.0">
+                              <Button fx:id="exploreButton" mnemonicParsing="false" onAction="#openExploreMenu" prefHeight="0.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -269,7 +269,7 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button fx:id="eventButton" mnemonicParsing="false" prefHeight="0.0" prefWidth="200.0">
+                              <Button fx:id="eventButton" mnemonicParsing="false" mouseTransparent="true" opacity="0.4" prefHeight="0.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
