@@ -48,7 +48,8 @@ public class GameController implements Initializable {
       }
     }
   }
-  private void hideDarkBg() {
+  
+  @FXML private void hideDarkBg() {
     darkBg.setVisible(false);
   }
 

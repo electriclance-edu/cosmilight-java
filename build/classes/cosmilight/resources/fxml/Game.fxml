@@ -546,7 +546,7 @@
                               </VBox>
                            </content>
                         </ScrollPane>
-                        <Button mnemonicParsing="false" text="Close">
+                        <Button mnemonicParsing="false" onAction="#hideDarkBg" text="Close">
                            <StackPane.margin>
                               <Insets right="10.0" top="10.0" />
                            </StackPane.margin>
