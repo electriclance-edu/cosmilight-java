@@ -31,21 +31,20 @@ public class StartController implements Initializable {
   private boolean music = false, cheats = false;
   
   @FXML private void startGame(ActionEvent event) throws Exception {
-    Node source = (Node) event.getSource();
-    Scene oldScene = (Scene) source.getScene();
-    Stage currentStage = (Stage) oldScene.getWindow();
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/Game.fxml"));
-    Scene scene = loader.load();
-    currentStage.setScene(scene);
-    currentStage.show();
+    Node source = (Node) event.getSource(); //get elem
+    Scene oldScene = (Scene) source.getScene(); //get scene from elem
+    Stage stage = (Stage) oldScene.getWindow(); //get window from elem
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/Game.fxml")); //load fxml
+    Scene scene = loader.load(); //generate Game scene
+    
+    DisplayManager.gameStage = stage; //set window for DisplayManager
+    DisplayManager.gameController = loader.getController(); //set controller for DisplayManager
+    
+    stage.setScene(scene);
+    stage.show();
   }
   @FXML private void openTutorial() throws Exception {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/Tutorial.fxml"));
-    Stage stage = new Stage();
-    Scene scene = loader.load();
-    stage.setScene(scene);
-    stage.setTitle("Cosmilight");
-    stage.show();
+    new DisplayManager().openWindow("resources/fxml/Tutorial.fxml","Cosmilight",true);
   }
   @FXML private void toggleMusic(MouseEvent event) {
     music = music ? false : true;

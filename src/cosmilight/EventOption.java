@@ -11,4 +11,12 @@ public class EventOption {
   private ResourceList cost;
   private Condition[] conditions;
   private Consequence[] consequences;
+  
+  public EventOption(String t, String d, ResourceList c, Condition[] cond, Consequence[] cons) {
+    title = t;
+    desc = d;
+    cost = c;
+    conditions = cond;
+    consequences = cons;
+  }
 }

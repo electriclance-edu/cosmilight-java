@@ -2,3 +2,10 @@
 id:seedTree_intro
 title:A lone titan.
 image:forest.png
+content:An unusually large tree sits here, its many roots all as thick as your torso. The tree demonstrates incredible vitality — proven by the massive amount of seeds scattered about it.
+Though most of them lie blackened, withered by the devouring darkness, a surviving seed or two may lie within the piles. It’d take a while to search through, though.
+
+options:
+---
+
+]

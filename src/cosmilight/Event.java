@@ -6,6 +6,8 @@ package cosmilight;
 */
 
 public class Event {
+  public static Event currentlyDisplayed;
+  
   private String id;
   private String title;
   private String imageUrl;
@@ -13,4 +15,18 @@ public class Event {
   private EventOption[] options;
   private Consequence[] consequences;
   private String[] spawnableBiomeNames;
+  
+  public Event(String i, String t, String img, String[] cont, EventOption[] op, Consequence[] cons, String[] biomes) {
+    id = i;
+    title = t;
+    imageUrl = img;
+    content = cont;
+    options = op;
+    consequences = cons;
+    spawnableBiomeNames = biomes;
+  }
+  
+  public void trigger() {
+    
+  }
 }

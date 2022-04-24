@@ -346,6 +346,7 @@
                   </HBox>
                </children>
             </VBox>
+            <Pane fx:id="darkBg" prefHeight="625.0" prefWidth="1250.0" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false" />
          </children>
       </StackPane>
    </root>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmilight.StartController">
+<Scene stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosmilight.StartController">
    <root>
       <StackPane prefHeight="625.0" prefWidth="1250.0" style="-fx-background-color: #0E1118;">
          <children>
@@ -32,7 +32,7 @@
                               <Insets bottom="75.0" />
                            </VBox.margin>
                         </ImageView>
-                        <Button fx:id="startButton" mnemonicParsing="false" onAction="#startGame" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;" text="Start">
+                        <Button fx:id="startButton" mnemonicParsing="false" onAction="#startGame" prefHeight="0.0" prefWidth="200.0" text="Start">
                            <padding>
                               <Insets bottom="10.0" top="10.0" />
                            </padding>
@@ -43,7 +43,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#openTutorial" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #333F50; -fx-text-fill: white; -fx-border-color: #222A35; -fx-border-width: 0 0 5 0;" text="Tutorial">
+                        <Button mnemonicParsing="false" onAction="#openTutorial" prefHeight="0.0" prefWidth="200.0" text="Tutorial">
                            <padding>
                               <Insets bottom="10.0" top="10.0" />
                            </padding>

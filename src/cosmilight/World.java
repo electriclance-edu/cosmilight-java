@@ -5,20 +5,27 @@ import java.util.ArrayList;
 /**
 * @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
 * @date Creation: 3/30/2022
+* @thought 4/24/2022, Lance
+* should time be in a separate TimeManager.java file? 
+* cause i mean space-time is separate for a reason
 */
 
 public class World {
-  private int time = 0; //NOTE: currentTick, originally age
   private Tile[][] tiles;
   private ArrayList<Event> randomEventsPool;
   private ArrayList<Event> queuedEvents;
-  private ArrayList<Integer> queuedEventsTick; //WEIRD: wth why does it not integer
+  private ArrayList<Integer> queuedEventsTick;
+  
+  private int time = 0;
+  private boolean unpaused = false;
   
   public World() {
     int worldSize = 200;
     tiles = generateWorld(new Tile[worldSize][worldSize]);
-    
     //TODO: initialize world
+    //TODO: initialize time loop, 1 tick per second
+    
+    unpaused = true;
   }
   
   //NOTE: generateWorld() might get deleted cause time restraints
@@ -52,5 +59,16 @@ public class World {
     }
     
     return tilemap;
+  }
+  
+  public void tick() {
+    //increment producers
+    //attempt damage
+    //check for queued events
+  }
+  
+  //NOTE: false = paused, true = unpaused
+  public void toggleTime(boolean state) {
+    unpaused = state;
   }
 }

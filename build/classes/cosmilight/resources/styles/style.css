@@ -6,7 +6,7 @@
 }
 
 
-Text {
+Text,.normalText {
     -fx-font-size: 18px;
     -fx-font-family: "Heebo", sans-serif;
     -fx-fill: #D9D9D9;
@@ -19,8 +19,8 @@ Button {
     -fx-text-fill: #D9D9D9;
 }
 Button:armed {
-    -fx-effect:none;
-    -fx-translate-y:5px;
+    -fx-effect:none !important;
+    -fx-translate-y:5px !important;
 }
 ScrollPane {
    -fx-background:transparent;
@@ -62,6 +62,10 @@ ScrollPane {
 }
 .bg-darkNormal {
     -fx-background-color: #0E1118;
+}
+.buttonRed {
+    -fx-background-color: #B7544B;
+    -fx-effect:dropshadow(three-pass-box, #542522, 0, 0, 0, 5px);
 }
 
 
