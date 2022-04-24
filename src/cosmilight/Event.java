@@ -26,6 +26,12 @@ public class Event {
     spawnableBiomeNames = biomes;
   }
   
+  private String getId() {
+    return id;
+  }
+  private String getTitle() {
+    return title;
+  }
   public void trigger() {
     
   }

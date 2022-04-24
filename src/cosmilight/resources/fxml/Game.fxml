@@ -24,11 +24,11 @@
          <children>
             <StackPane>
                <children>
-                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane>
                      <children>
                         <VBox>
                            <children>
-                              <HBox>
+                              <HBox fx:id="amogus">
                                  <children>
                                     <Polygon fill="WHITE" opacity="0.0" points="-360, -135, -450, -90, -360, -45, -270, -90" stroke="#ffffff00" strokeType="INSIDE">
                                        <HBox.margin>
@@ -116,15 +116,9 @@
                                  </children>
                               </HBox>
                            </children>
-                           <FlowPane.margin>
-                              <Insets />
-                           </FlowPane.margin>
                         </VBox>
                      </children>
-                     <StackPane.margin>
-                        <Insets />
-                     </StackPane.margin>
-                  </FlowPane>
+                  </AnchorPane>
                   <AnchorPane>
                      <children>
                         <Circle fill="#9775ff" layoutX="724.0" layoutY="326.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="10.0" />
@@ -349,7 +343,7 @@
                   </HBox>
                </children>
             </VBox>
-            <StackPane fx:id="darkBg" style="-fx-background-color: rgba(0,0,0,0.4);">
+            <StackPane fx:id="darkBg" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
                <children>
                   <VBox fx:id="pauseMenu" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;" visible="false">
                      <children>
@@ -374,7 +368,7 @@
                         </FlowPane>
                      </children>
                   </VBox>
-                  <StackPane fx:id="constructionsMenu" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" visible="false">
+                  <StackPane fx:id="constructionsMenu" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" styleClass="bg-darkNormal" vbarPolicy="NEVER">
                            <content>

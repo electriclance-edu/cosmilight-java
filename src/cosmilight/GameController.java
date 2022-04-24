@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -24,6 +25,7 @@ public class GameController implements Initializable {
   @FXML VBox pauseMenu;
   @FXML StackPane constructionsMenu;
   @FXML ScrollPane eventsMenu;
+  @FXML HBox amogus;
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
@@ -50,6 +52,7 @@ public class GameController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    amogus.getChildren().add(DisplayManager.generateIsotile());
     menus[0] = pauseMenu;
     menus[1] = constructionsMenu;
     menus[2] = eventsMenu;
