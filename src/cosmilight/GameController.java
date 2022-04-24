@@ -11,14 +11,18 @@ package cosmilight;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class GameController implements Initializable {
   @FXML Pane darkBg;
@@ -72,7 +76,6 @@ public class GameController implements Initializable {
             new Consequence[0]
     );
     
-    
     Event.currentlyDisplayed = new Event(
             "template",
             "A template event.",
@@ -83,4 +86,15 @@ public class GameController implements Initializable {
             new String[0]
     );
   }
+  
+  @FXML private void clickQuit(ActionEvent event) throws Exception {
+        Node source = (Node) event.getSource();
+        Scene oldScene = (Scene) source.getScene();
+        Stage stage = (Stage) oldScene.getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/Start.fxml"));
+        Scene scene = loader.load();
+
+        stage.setScene(scene);
+        stage.show();
+    }
 }

@@ -345,16 +345,16 @@
             </VBox>
             <StackPane fx:id="darkBg" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
                <children>
-                  <VBox fx:id="pauseMenu" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;" visible="false">
+                  <VBox fx:id="pauseMenu" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
                      <children>
                         <FlowPane alignment="BOTTOM_CENTER" prefHeight="246.0" prefWidth="400.0">
                            <children>
-                              <Button mnemonicParsing="false" styleClass="header" text="Continue" />
+                              <Button mnemonicParsing="false" onAction="#hideDarkBg" styleClass="header" text="Continue" />
                            </children>
                         </FlowPane>
                         <FlowPane alignment="CENTER" prefHeight="110.0" prefWidth="400.0">
                            <children>
-                              <Button mnemonicParsing="false" styleClass="header" text="Quit" />
+                              <Button mnemonicParsing="false" onAction="#clickQuit" styleClass="header" text="Quit" />
                            </children>
                         </FlowPane>
                         <FlowPane alignment="CENTER" prefHeight="104.0" prefWidth="400.0">
@@ -368,7 +368,7 @@
                         </FlowPane>
                      </children>
                   </VBox>
-                  <StackPane fx:id="constructionsMenu" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0">
+                  <StackPane fx:id="constructionsMenu" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" visible="false">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" styleClass="bg-darkNormal" vbarPolicy="NEVER">
                            <content>
