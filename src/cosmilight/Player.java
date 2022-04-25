@@ -1,9 +1,9 @@
 package cosmilight;
 
 /**
-* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
-* @date Creation: 3/30/2022
+* @author Dementiabeans
 */
+//Creation: 3/30/2022
 
 public class Player {
   //stats

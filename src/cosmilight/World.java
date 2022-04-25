@@ -3,12 +3,12 @@ package cosmilight;
 import java.util.ArrayList;
 
 /**
-* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
-* @date Creation: 3/30/2022
-* @thought 4/24/2022, Lance
-* should time be in a separate TimeManager.java file? 
-* cause i mean space-time is separate for a reason
+* @author Dementiabeans
 */
+//date Creation: 3/30/2022
+//thought 4/24/2022, Lance
+//  should time be in a separate TimeManager.java file? 
+//  cause i mean space-time is separate for a reason
 
 public class World {
   private Tile[][] tiles;

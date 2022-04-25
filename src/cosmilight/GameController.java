@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cosmilight;
-
-/**
-* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
-* @date Creation: 4/23/2022
-*/
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,18 +9,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+/**
+* @author Dementiabeans
+*/
+//Creation: 4/23/2022
 
 public class GameController implements Initializable {
   @FXML Pane darkBg;
   @FXML VBox pauseMenu;
   @FXML StackPane constructionsMenu;
   @FXML ScrollPane eventsMenu;
-  @FXML HBox amogus;
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
@@ -64,7 +58,7 @@ public class GameController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    amogus.getChildren().add(DisplayManager.generateIsotile());
+    //amogus.getChildren().add(DisplayManager.generateIsotile());
     
     menus[0] = pauseMenu;
     menus[1] = constructionsMenu;

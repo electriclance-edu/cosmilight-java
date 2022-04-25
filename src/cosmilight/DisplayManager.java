@@ -10,9 +10,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
-* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
-* @date Creation: 4/23/2022
+* @author Dementiabeans
+* 
 */
+//Creation: 4/23/2022
 
 public class DisplayManager {
   public static Stage gameStage;
@@ -43,7 +44,7 @@ public class DisplayManager {
       -270.0, -90.0
     });
     isotile.setFill(Paint.valueOf(color));
-    HBox.setMargin(isotile,new Insets(0.0, 10.0, 0.0, 10.0));
+    HBox.setMargin(isotile, new Insets(0.0, 10.0, 0.0, 10.0));
     
     return isotile;
   }

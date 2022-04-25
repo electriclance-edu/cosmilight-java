@@ -1,15 +1,15 @@
 package cosmilight;
 
 /**
-* @author The Dementiabeans (Lance Libatique, Anika Panopio, Lance Chiu)
-* @date Creation: 3/30/2022
-* @note 4/16/2022, lance
-*   i spent an hour trying to figure out how to parse JSON
-*   if there is a built-in Java JSON library I Will Cry but for now we have gson, thanks google overlords
-* @note 4/24/2022, lance
-*   JOY EUPHORIA HAPPINESS YAY TURNS OUT JAVA HAS A BUILT IN XML PARSER
-*   THANK U JDK OVERLORDS
+* @author Dementiabeans
 */
+//Creation: 3/30/2022
+//note 4/16/2022, lance
+//  i spent an hour trying to figure out how to parse JSON
+//  if there is a built-in Java JSON library I Will Cry but for now we have gson, thanks google overlords
+//note 4/24/2022, lance
+//  JOY EUPHORIA HAPPINESS YAY TURNS OUT JAVA HAS A BUILT IN XML PARSER
+//  THANK U JDK OVERLORDS
 
 import java.util.Random;
 import java.io.FileReader;
