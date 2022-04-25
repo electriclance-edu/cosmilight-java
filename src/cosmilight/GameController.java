@@ -16,19 +16,23 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 
+import javafx.scene.shape.Polygon;
+import javafx.scene.text.Text;
+
 /**
 * @author Dementiabeans
 */
 //Creation: 4/23/2022
 
 public class GameController implements Initializable {
-  @FXML Pane darkBg;
+  @FXML Pane darkBg, eventContent;
   @FXML VBox pauseMenu;
   @FXML StackPane constructionsMenu;
   @FXML ScrollPane eventsMenu;
   @FXML AnchorPane isotilePositionerPositioner;
   @FXML AnchorPane isotilePositioner;
   @FXML AnchorPane structurePositioner;
+  @FXML Text textOne, textTwo, textThree;
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
