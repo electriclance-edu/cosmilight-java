@@ -31,6 +31,8 @@ public class StartController implements Initializable {
   private boolean music = false, cheats = false;
   
   @FXML private void startGame(ActionEvent event) throws Exception {
+    new Game(cheats);
+    
     Node source = (Node) event.getSource(); //get elem
     Scene oldScene = (Scene) source.getScene(); //get scene from elem
     Stage stage = (Stage) oldScene.getWindow(); //get window from elem

@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -24,12 +23,11 @@
          <children>
             <StackPane>
                <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="1250.0">
+                  <AnchorPane fx:id="isotilePositionerPositioner" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="1250.0">
                      <children>
-                        <AnchorPane managed="false" prefHeight="625.0" prefWidth="1250.0">
+                        <AnchorPane fx:id="isotilePositioner" managed="false">
                            <children>
-                              <Polygon fill="#222a35" layoutX="625.0" layoutY="312.5" points="0.0, -45.5, -90.0, 0.0, 0.0, 45.0, 90.0, 0" stroke="#ffffff00" strokeType="INSIDE" />
-                              <Polygon fill="#222a35" layoutX="825.0" layoutY="312.5" points="0.0, -45.5, -90.0, 0.0, 0.0, 45.0, 90.0, 0" stroke="#ffffff00" strokeType="INSIDE" />
+                              <Circle fill="#9775ff" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="10.0" visible="false" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -37,15 +35,9 @@
                         <Insets />
                      </StackPane.margin>
                   </AnchorPane>
-                  <AnchorPane>
-                     <children>
-                        <Circle fill="#9775ff" layoutX="724.0" layoutY="326.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="10.0" />
-                        <Circle fill="WHITE" layoutX="625.0" layoutY="273.0" radius="30.0" stroke="#ff6666" strokeType="INSIDE" strokeWidth="10.0" />
-                     </children>
-                  </AnchorPane>
                </children>
             </StackPane>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1250.0">
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="625.0" prefWidth="1250.0">
                <children>
                   <HBox prefHeight="60.0" prefWidth="708.0" style="-fx-background-color: rgba(0,0,0,0.6);">
                      <children>
@@ -124,24 +116,24 @@
                         </FlowPane>
                      </children>
                   </HBox>
-                  <FlowPane alignment="CENTER" prefWidth="1000.0" VBox.vgrow="ALWAYS" />
+                  <FlowPane alignment="CENTER" mouseTransparent="true" prefWidth="1000.0" VBox.vgrow="ALWAYS" />
                   <HBox maxHeight="200.0" prefHeight="200.0" style="-fx-background-color: rgba(80,110,130,0.25);">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" prefWidth="1000.0">
                            <content>
                               <VBox prefHeight="200.0" prefWidth="950.0" style="-fx-padding: 10;">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="I am a change :flushed:" wrappingWidth="960.0">
+                                    <Text fx:id="areaHeader" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="header" wrappingWidth="960.0">
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="faded" text="The description of the area goes into this location. This sentence is written most verbose, so as to give the visual impression of the true area description, which would be quite long. This is colored white when the player first enters the area, but is greyed out on subsequent visits." wrappingWidth="960.0">
+                                    <Text fx:id="areaContent" strokeType="OUTSIDE" strokeWidth="0.0" text="description when no development, otherwise is development" wrappingWidth="960.0">
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Developments in the area are written here. For example, say a Well built into this area is overflowing with water. This would be the place to describe that. Or, say an Event is occurring in the region, there'd be a description of that event here. This doesn't exist when the player first enters the region." wrappingWidth="960.0">
+                                    <Text fx:id="areaFaded" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="faded" text="description when development" wrappingWidth="960.0">
                                        <VBox.margin>
                                           <Insets bottom="5.0" />
                                        </VBox.margin>
@@ -261,7 +253,7 @@
                   </HBox>
                </children>
             </VBox>
-            <StackPane fx:id="darkBg" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
+            <StackPane fx:id="darkBg" mouseTransparent="true" style="-fx-background-color: rgba(0,0,0,0.4);" visible="false">
                <children>
                   <VBox fx:id="pauseMenu" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="625.0" prefWidth="400.0" style="-fx-background-color: #0E1118;">
                      <children>

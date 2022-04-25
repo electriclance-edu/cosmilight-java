@@ -1,6 +1,8 @@
 package cosmilight;
 
+import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
 * @author Dementiabeans
@@ -16,16 +18,62 @@ public class World {
   private ArrayList<Event> queuedEvents;
   private ArrayList<Integer> queuedEventsTick;
   
+  private int worldSize;
+  
   private int time = 0;
   private boolean unpaused = false;
   
   public World() {
-    int worldSize = 200;
+    worldSize = 200;
     tiles = generateWorld(new Tile[worldSize][worldSize]);
-    //TODO: initialize world
-    //TODO: initialize time loop, 1 tick per second
+    
+    for (Tile[] tileRow : tiles) {
+      Arrays.fill(tileRow, new Tile("abyss"));
+    }
+    
+    //hardcoded world
+    this.setTile(0,0,new Tile("grove"));
+    this.setTile(0,1,new Tile("templains"));
+    this.setTile(-1,0,new Tile("desert"));
+    this.setTile(-1,-1,new Tile("desert"));
+    this.setTile(0,-1,new Tile("ocean"));
+    this.setTile(1,-1,new Tile("ocean"));
     
     unpaused = true;
+  }
+  public Tile getTile(int x, int y) {
+    return getTile(x,y,true);
+  }
+  public Tile getTile(int x, int y, boolean relativeToCenter) {
+    int offset = (relativeToCenter ? worldSize/2 : 0);
+    return tiles[x + offset][y + offset];
+  }
+  public void setTile(int x, int y, Tile newValue) {
+    setTile(x,y,newValue,true);
+  }
+  public void setTile(int x, int y, Tile newValue, boolean relativeToCenter) {
+    int offset = (relativeToCenter ? worldSize/2 : 0);
+    tiles[x + offset][y + offset] = newValue;
+  }
+  public Point[] getSurroundings(int x, int y) {
+    Point[] translations = {
+      new Point(0,1),
+      new Point(1,1),
+      new Point(1,0),
+      new Point(1,-1),
+      new Point(0,-1),
+      new Point(-1,-1),
+      new Point(-1,0),
+      new Point(-1,1)
+    };
+    
+    Point[] points = new Point[8];
+    
+    for (int i = 0; i < translations.length; i++) {
+      points[i] = new Point(x + translations[i].x, y + translations[i].y);
+    }
+    
+    return points;
   }
   
   //NOTE: generateWorld() might get deleted cause time restraints

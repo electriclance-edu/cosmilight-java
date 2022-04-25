@@ -18,8 +18,8 @@ import javafx.stage.StageStyle;
 public class DisplayManager {
   public static Stage gameStage;
   public static GameController gameController;
-  public static double screenHeight = 1250.0;
-  public static double screenWidth = 625.0;
+  private static double screenHeight = 1250.0;
+  private static double screenWidth = 625.0;
   
   public void openWindow(String url, String title, boolean hasToolbar) throws Exception {
     FXMLLoader loader = new FXMLLoader(getClass().getResource(url));
@@ -40,14 +40,20 @@ public class DisplayManager {
   };
   public static Polygon createIsotile(String color) {
     Polygon isotile = new Polygon(new double[]{
-      -360.0, -135.0,
-      -450.0, -90.0,
-      -360.0, -45.0,
-      -270.0, -90.0
+      0.0, -45.5, 
+      -90.0, 0.0, 
+      0.0, 45.0, 
+      90.0, 0
     });
     isotile.setFill(Paint.valueOf(color));
     HBox.setMargin(isotile, new Insets(0.0, 10.0, 0.0, 10.0));
     
     return isotile;
+  }
+  public static double getScreenHeight() {
+    return screenHeight;
+  }
+  public static double getScreenWidth() {
+    return screenWidth;
   }
 }

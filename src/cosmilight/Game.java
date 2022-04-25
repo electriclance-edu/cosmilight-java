@@ -23,6 +23,7 @@ import java.io.File;
 
 public class Game {
   
+  private static Game currentGame;
   private Random rand;
   private int seed = 100; //NOTE: test seed for now, change to randomized in future
   private World world;
@@ -36,11 +37,23 @@ public class Game {
     rand = new Random(seed);
     System.out.println(rand);
     
-    world = new World(); //NOTE: 500 is size of world, get user input instead of hardcoded?
+    world = new World();
     player = new Player(cheats);
     
     //generate events, resources, biome, constructiontypes from data
+    
+    currentGame = this;
   }
+  public static Game get() {
+    return currentGame;
+  }
+  public Player getPlayer() {
+    return player;
+  }
+  public World getWorld() {
+    return world;
+  }
+  
   private void generateGameData() {
     
   } 
@@ -51,11 +64,11 @@ public class Game {
       FileReader reader = new FileReader("/resources/json/Events.json");
     } catch (Exception e) {}
   }
+  
   public int randInt(int max) {
     return (int) Math.ceil(rand.nextDouble() * max);
   }
   public double randDouble(double max) {
     return rand.nextDouble() * max;
   }
-  
 }
