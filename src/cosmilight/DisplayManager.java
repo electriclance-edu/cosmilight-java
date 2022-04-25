@@ -46,7 +46,6 @@ public class DisplayManager {
       90.0, 0
     });
     isotile.setFill(Paint.valueOf(color));
-    HBox.setMargin(isotile, new Insets(0.0, 10.0, 0.0, 10.0));
     
     return isotile;
   }

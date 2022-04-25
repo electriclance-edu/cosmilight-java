@@ -60,7 +60,6 @@ public class StartController implements Initializable {
     } else {
       startButton.setText("Start");
     }
-    
   }
   
   @Override

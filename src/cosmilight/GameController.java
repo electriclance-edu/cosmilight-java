@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -32,10 +33,12 @@ public class GameController implements Initializable {
   @FXML ScrollPane eventsMenu;
   @FXML AnchorPane isotilePositionerPositioner;
   @FXML AnchorPane isotilePositioner;
-  @FXML Text textOne, textTwo, textThree;
   @FXML Text areaHeader;
   @FXML Text areaFaded;
   @FXML Text areaContent;
+  @FXML Text eventHeader;
+  @FXML VBox eventContentParent;
+  @FXML VBox eventOptionsParent;
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
@@ -127,6 +130,16 @@ public class GameController implements Initializable {
     isotilePositioner.setLayoutX(positionX);
     isotilePositioner.setLayoutY(positionY);
   }
+  
+  public void displayEvent(Event event) {
+    eventHeader.setText(event.getTitle());
+    for (String paragraph : event.getContent()) {
+      Text text = new Text(paragraph);
+      text.setWrappingWidth(370);
+      VBox.setMargin(text, new Insets(0.0, 0.0, 20.0, 0.0));
+      eventContentParent.getChildren().add(text);
+    }
+  }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -161,6 +174,8 @@ public class GameController implements Initializable {
             new Consequence[0],
             new String[0]
     );
+    
+    displayEvent(Event.currentlyDisplayed);
     
     //hardcoded for now
     displayTile(0,0);    
