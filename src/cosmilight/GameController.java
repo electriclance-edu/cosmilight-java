@@ -9,9 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +26,9 @@ public class GameController implements Initializable {
   @FXML VBox pauseMenu;
   @FXML StackPane constructionsMenu;
   @FXML ScrollPane eventsMenu;
+  @FXML AnchorPane isotilePositionerPositioner;
+  @FXML AnchorPane isotilePositioner;
+  @FXML AnchorPane structurePositioner;
   private Node[] menus = new Node[3];
   
   @FXML private void openConstruction() throws Exception {
@@ -51,14 +56,16 @@ public class GameController implements Initializable {
     darkBg.setVisible(false);
   }
   
-  private void generateTile(int x, int y) {
-    int row = x;
-    int column = y;
+  private void displayTile(Tile tile) {
+    Polygon isotile = DisplayManager.createIsotile();
+    
+    int isotileX = (tile.getX() * -100) + (tile.getY() * 100);
+    int isotileY = (tile.getX() * 50) + (tile.getY() * -50);
+    
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    //amogus.getChildren().add(DisplayManager.generateIsotile());
     
     menus[0] = pauseMenu;
     menus[1] = constructionsMenu;

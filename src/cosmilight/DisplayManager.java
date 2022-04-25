@@ -18,6 +18,8 @@ import javafx.stage.StageStyle;
 public class DisplayManager {
   public static Stage gameStage;
   public static GameController gameController;
+  public static double screenHeight = 1250.0;
+  public static double screenWidth = 625.0;
   
   public void openWindow(String url, String title, boolean hasToolbar) throws Exception {
     FXMLLoader loader = new FXMLLoader(getClass().getResource(url));
@@ -33,10 +35,10 @@ public class DisplayManager {
     stage.show(); 
   }
   //overloaded, default value
-  public static Polygon generateIsotile() {
-    return generateIsotile("#222a35");
+  public static Polygon createIsotile() {
+    return createIsotile("#222a35");
   };
-  public static Polygon generateIsotile(String color) {
+  public static Polygon createIsotile(String color) {
     Polygon isotile = new Polygon(new double[]{
       -360.0, -135.0,
       -450.0, -90.0,
