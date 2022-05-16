@@ -20,4 +20,22 @@ public class EventOption {
     conditions = cond;
     consequences = cons;
   }
+//  **********************
+//  GETTERS
+//  **********************
+  public String getTitle() {
+    return title;
+  }
+  public String getDesc() {
+    return desc;
+  }
+  public ResourceList getCost() {
+    return cost;
+  }
+//  **********************
+//  OTHER
+//  **********************
+  public void trigger() {
+    
+  }
 }

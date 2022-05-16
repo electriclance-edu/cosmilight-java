@@ -1,7 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <AllEvents>
-    <Event>
-        
-    </Event>
+    <EventGroup id="seedTree">
+        <Event id="intro" imageUrl="areas/forest.png">
+            <title>A lone titan.</title>
+            <content>
+                <p> 
+                    An unusually large tree sits here, its many roots all as 
+                    thick as your torso. The tree demonstrates incredible vitality 
+                    — proven by the massive amount of seeds scattered about it. 
+                </p>
+                <p>
+                    Though most of the seeds lie blackened, withered by the 
+                    devouring darkness, a surviving seed or two may lie within 
+                    the piles. It’d take a while to search through, though.
+                </p>
+            </content>
+            <options>
+                <option>
+                    <title>Leave the tree alone.</title>
+                    <desc>You have better things to do.</desc>
+                </option>
+                <option>
+                    <title>Search through the piles.</title>
+                    <desc>A seed may hide under a mantle of ash and rot.</desc>
+                    <cost>
+                        <resource name="water" amount="2"></resource>
+                    </cost>
+                    <consequences>
+                        <consequence type="chanceEvent">
+                            <parameter>seedTree_forage_fail</parameter>
+                            <parameter>50</parameter>
+                            <parameter>seedTree_forage_success</parameter>
+                            <parameter>50</parameter>
+                        </consequence>
+                    </consequences>
+                </option>
+                <option>
+                    <title>Water the tree.</title>
+                    <desc>Though it'll take a lot of water, the tree may yield new seeds.</desc>
+                    <cost>
+                        <resource name="water" amount="5"></resource>
+                    </cost>
+                </option>
+            </options>
+            <biomes>
+                <biome>plains</biome>
+            </biomes>
+        </Event>
+        <Event id="ID" imageUrl="areas/IMAGENAME.png">
+            <title></title>
+            <content>
+                <p>contentParagraphOne</p>
+                <p>contentParagraphTwo</p>
+            </content>
+            <options>
+                <option>
+                    <title></title>
+                    <desc></desc>
+                    <cost>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                    </cost>
+                </option>
+            </options>
+            <consequences>
+                <consequence type="consequenceType">
+                    <parameter>
+                        consequenceParameterOne
+                    </parameter>
+                    <parameter>
+                        consequenceParameterTwo
+                    </parameter>
+                </consequence>
+            </consequences>
+            <biomes></biomes>
+        </Event>
+    </EventGroup>
+    <EventGroup id="genericPlains">
+        <Event id="one" imageUrl="areas/foliage.png">
+            <title>A small cavern.</title>
+            <content>
+                <p>Through your </p>
+                <p>contentParagraphTwo</p>
+            </content>
+            <options>
+                <option>
+                    <title></title>
+                    <desc></desc>
+                    <cost>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                    </cost>
+                    <consequences>
+                        <consequence type="consequenceType">
+                            <parameter>
+                                consequenceParameterOne
+                            </parameter>
+                            <parameter>
+                                consequenceParameterTwo
+                            </parameter>
+                        </consequence>
+                    </consequences>
+                </option>
+            </options>
+            <consequences>
+                <consequence type="consequenceType">
+                    <parameter>consequenceParameterOne</parameter>
+                    <parameter>consequenceParameterTwo</parameter>
+                </consequence>
+            </consequences>
+            <biomes>
+                <biome>plains</biome>
+            </biomes>
+        </Event>
+    </EventGroup>
 </AllEvents>
+
+<!--
+  private String id;
+  private String title;
+  private String imageUrl;
+  private String[] content;
+  private EventOption[] options;
+  private Consequence[] consequences;
+  private String[] spawnableBiomeNames;
+-->

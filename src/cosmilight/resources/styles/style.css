@@ -34,11 +34,14 @@ ScrollPane {
 .color-metal, .color-metal * {
     -fx-fill: #ff6666;
 }
-.color-seed, .color-seed * {
+.color-seeds, .color-seeds * {
     -fx-fill: #6aff94;
 }
 .color-energy, .color-energy * {
     -fx-fill: #a17af4;
+}
+.color-void, .color-void * {
+    -fx-fill: #D9D9D9;
 }
 .faded {
     -fx-opacity: 0.6;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Templates>
+    <EventGroup id="SUFFIX_FOR_ALL_SUB_EVENTS">
+        <Event id="ID" imageUrl="areas/IMAGENAME.png">
+            <title></title>
+            <content>
+                <p>contentParagraphOne</p>
+                <p>contentParagraphTwo</p>
+            </content>
+            <options>
+                <option>
+                    <title></title>
+                    <desc></desc>
+                    <cost>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                        <resource name="RESOURCE_NAME" amount="AMOUNT"></resource>
+                    </cost>
+                    <consequences>
+                        <consequence type="consequenceType">
+                            <parameter>
+                                consequenceParameterOne
+                            </parameter>
+                            <parameter>
+                                consequenceParameterTwo
+                            </parameter>
+                        </consequence>
+                    </consequences>
+                </option>
+            </options>
+            <consequences>
+                <consequence type="consequenceType">
+                    <parameter>consequenceParameterOne</parameter>
+                    <parameter>consequenceParameterTwo</parameter>
+                </consequence>
+            </consequences>
+            <biomes>
+                <biome>plains</biome>
+                <!--<biome>overgrowth</biome>-->
+                <!--<biome>grove</biome>-->
+                
+                <biome>sea</biome>
+                <!--<biome>algalSea</biome>-->
+                <!--<biome>island</biome>-->
+                
+                <biome>mountains</biome>
+                <!--<biome>forestedMountains</biome>-->
+                
+                <biome>ruins</biome>
+                <biome>syoRuins</biome>
+                <biome>kaluluaRuins</biome>
+                <biome>tamashiiRuins</biome>
+                
+                <!--<biome>starRim</biome>-->
+                <!--<biome>starSlopes</biome>-->
+                <!--<biome>fallenStar</biome>-->    
+                
+                <!--<biome>grandWall</biome> this is the tamashii, with their magitech-->
+                <!--<biome>grandPylon</biome> this is the syo, ever watching-->
+                <!--<biome>grandFortress</biome> this is the kalulua, with their militaristic divinity-->    
+                
+                <!--<biome>floatingIslands</biome> magic runs untamed and free and dangerous here-->    
+                <!--<biome>deepScar</biome> it almost looks like a grand creature had clawed the earth open-->
+                <!--<biome>vastSkeleton</biome> it would be wise to avoid the aura of death that permeates this place.-->    
+            </biomes>
+        </Event>
+    </EventGroup>
+</Templates>

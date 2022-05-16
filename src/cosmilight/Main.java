@@ -3,8 +3,8 @@ package cosmilight;
 /**
 * @author Dementiabeans
 */
-//date Creation: 3/30/2022
-//note 3/31/2022, Lance
+//Creation: 3/30/2022
+//NOTE: 3/31/2022, Lance
 //  IT FEELS SO REAL NOW :OOO WE'RE MAKING A GAME YAY
 
 import javafx.application.Application;
@@ -14,6 +14,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
   
+  /**
+  * description of entire function. 
+  *
+  * @author name
+  * @param parameterOne description of parameter
+  * @param parameterTwo description of parameter
+  * @return description of return value
+  * @throws description of throw value
+  */
   @Override
   public void start(Stage stage) throws Exception {
     stage.setResizable(false);

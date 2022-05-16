@@ -28,22 +28,32 @@ public class Game {
   private int seed = 100; //NOTE: test seed for now, change to randomized in future
   private World world;
   private Player player;
-  static public Event[] events;
-  static public Resource[] resources;
-  static public Biome[] biome;
-  static public ConstructionType[] constructionTypes;
-  
+  private Resource[] resources; //move to respective class
+  private Biome[] biome; //move to respective class
+  private ConstructionType[] constructionTypes; //move to respective class
+   
   public Game(boolean cheats) {
     rand = new Random(seed);
-    System.out.println(rand);
+    currentGame = this;
+    
+    Biome.generateTemplates();
+    Event.generateTemplates();
+    Resource.generateTemplates();
     
     world = new World();
     player = new Player(cheats);
     
     //generate events, resources, biome, constructiontypes from data
-    
-    currentGame = this;
   }
+//  **********************
+//  GETTERS
+//  **********************
+  /**
+  * Returns the current Game instance generated during game startup. 
+  *
+  * @author lance l
+  * @return the current game instance.
+  */
   public static Game get() {
     return currentGame;
   }
@@ -53,18 +63,28 @@ public class Game {
   public World getWorld() {
     return world;
   }
-  
+  public Tile getCurrentTile() {
+    return world.getTile(player.getX(), player.getY());
+  }
+  public Tile getTile(int x, int y) {
+    return world.getTile(x, y);
+  }
+//  **********************
+//  XML GENERATORS
+//  **********************
   private void generateGameData() {
     
   } 
   private void generateEvents() throws InvalidDataException {
-    String json = "";
+    String xml = "";
     
     try {
-      FileReader reader = new FileReader("/resources/json/Events.json");
+      FileReader reader = new FileReader("/resources/json/Events.xml");
     } catch (Exception e) {}
   }
-  
+//  **********************
+//  OTHER
+//  **********************
   public int randInt(int max) {
     return (int) Math.ceil(rand.nextDouble() * max);
   }

@@ -1,4 +1,4 @@
-package cosmilight;
+  package cosmilight;
 
 import java.awt.Point;
 import java.net.URL;
@@ -11,7 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -24,7 +27,7 @@ import javafx.scene.text.Text;
 /**
 * @author Dementiabeans
 */
-//Creation: 4/23/2022
+// Creation: 4/23/2022
 
 public class GameController implements Initializable {
   @FXML Pane darkBg, eventContent;
@@ -36,10 +39,15 @@ public class GameController implements Initializable {
   @FXML Text areaHeader;
   @FXML Text areaFaded;
   @FXML Text areaContent;
+  @FXML ImageView eventImage;
   @FXML Text eventHeader;
   @FXML VBox eventContentParent;
   @FXML VBox eventOptionsParent;
   private Node[] menus = new Node[3];
+  
+//  **********************
+//  BUTTON FUNCTIONS
+//  **********************
   
   @FXML private void openConstruction() throws Exception {
     openWindow("constructionsMenu");
@@ -47,10 +55,10 @@ public class GameController implements Initializable {
   @FXML private void openPauseMenu() throws Exception {
     openWindow("pauseMenu");
   }
-  @FXML private void openExploreMenu() throws Exception {
-    openWindow("eventsMenu");
+  @FXML private void hideDarkBg() {
+    darkBg.setMouseTransparent(true);
+    darkBg.setVisible(false);
   }
-  
   private void openWindow(String windowId) {
     darkBg.setMouseTransparent(false);
     darkBg.setVisible(true);
@@ -63,11 +71,46 @@ public class GameController implements Initializable {
     }
   }
   
-  @FXML private void hideDarkBg() {
-    darkBg.setMouseTransparent(true);
-    darkBg.setVisible(false);
-  }
+//  **********************
+//  TILE RELATED FUNCTIONS
+//  **********************
   
+  /**
+  * Attempts to explore a given tile.
+  *
+  * @author lance
+  * @param x The x coordinate of the tile to be displayed.
+  * @param y The y coordinate of the tile to be displayed.
+  */
+  @FXML private void exploreCurrentTile() {
+    //get the current tile that the player is standing on
+    Player player = Game.get().getPlayer();
+    int x = player.getX();
+    int y = player.getY();
+    System.out.println("x: " + x + " y:" + y);
+    Tile tile = Game.get().getTile(x, y);
+    //if the tile contains an event, trigger that event and remove it from the list
+    if (!tile.isExplored()) {
+      String eventId = tile.getEventIds().get(0);
+      tile.removeLatestEvent();
+      Event event;
+      try {
+        event = Event.getEvent(eventId);
+        Event.setDisplayed(event);
+        displayEvent(event);
+        openWindow("eventsMenu");
+      } catch (InvalidIdException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+  }
+  /**
+  * Creates an isotile on the Game screen based on the corresponding tile in World.tiles.
+  *
+  * @author lance
+  * @param x The x coordinate of the tile to be displayed.
+  * @param y The y coordinate of the tile to be displayed.
+  */
   public void displayTile(int x, int y) {
     Tile tile = Game.get().getWorld().getTile(x, y);
     tile.setDisplayed(true);
@@ -75,9 +118,10 @@ public class GameController implements Initializable {
     Polygon isotile = DisplayManager.createIsotile(tile.getBiome().getHex());
     isotile.setId("tile" + x + "," + y);
     
-    //x is calculated by getting the raw X of the tile (eg. -1, 1) and multiplying it by -100 to get the absolute postion in pixels.
-    //x is also influenced by the raw Y of the tile, so that is added after bieng multiplied by 100.
+    //pixel x is calculated by getting the raw X of the tile (eg. -1, 1) and multiplying it by -100 to get the absolute postion in pixels.
+    //pixel x is also influenced by the raw Y of the tile, so that is added after being multiplied by 100.
     double isotileX = (x * 100.0) + (y * 100.0) + (DisplayManager.getScreenHeight()/2.0);
+    //pixel y has a similar deal to x
     double isotileY = (x * 50.0) + (y * -50.0) + (DisplayManager.getScreenWidth()/2.0);
     
     isotile.setLayoutX(isotileX);
@@ -90,14 +134,39 @@ public class GameController implements Initializable {
         String[] id = elem.getId().substring(4).split(",");
         int x = Integer.parseInt(id[0]);
         int y = Integer.parseInt(id[1]);
-        moveMapTo(x, y);
-        displayAreaData(x, y);
-        //surround(x, y);
+        movePlayer(x, y);
       }
     });
     
     isotilePositioner.getChildren().add(isotile);
   }
+  /**
+  * Updates the Player's position, displaying proper data based on what tile the player will be on.
+  *
+  * @author lance
+  * @param x The x coordinate of the player's new position.
+  * @param y The y coordinate of the player's new position.
+  */
+  public void movePlayer(int x, int y) {
+    Game.get().getPlayer().setPosition(x, y);
+    
+    moveMapTo(x, y);
+    displayAreaData(x, y);
+    Tile currentTile = Game.get().getCurrentTile();
+    
+    if (currentTile.isExplored()) {
+      
+    }
+    exploreCurrentTile();
+    //surround(x, y);
+  }
+  /**
+  * [BROKEN] Displays tiles around the 
+  *
+  * @author lance
+  * @param x The x coordinate of the player's new position.
+  * @param y The y coordinate of the player's new position.
+  */
   public void surround(int x, int y) {
     World world = Game.get().getWorld();
     Point[] coords = world.getSurroundings(x, y);
@@ -132,6 +201,10 @@ public class GameController implements Initializable {
   }
   
   public void displayEvent(Event event) {
+    Image image = new Image(Main.class.getResourceAsStream("resources/img/" + event.getImageUrl()));
+    eventImage.setImage(image);
+    
+    eventContentParent.getChildren().clear();
     eventHeader.setText(event.getTitle());
     for (String paragraph : event.getContent()) {
       Text text = new Text(paragraph);
@@ -139,43 +212,31 @@ public class GameController implements Initializable {
       VBox.setMargin(text, new Insets(0.0, 0.0, 20.0, 0.0));
       eventContentParent.getChildren().add(text);
     }
+    eventOptionsParent.getChildren().clear();
+    int i = 0;
+    for (EventOption option : event.getOptions()) {
+      Button optionComponent = DisplayManager.createEventOptionComponent(option, Integer.toString(i));
+    
+      optionComponent.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+          //trigger on eventoption
+          hideDarkBg();
+          
+          //insert code for eventoption trigger, supposed to get from displayedEvent
+        }
+      });
+      
+      eventOptionsParent.getChildren().add(optionComponent);
+      i++;
+    }
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    new Biome("templains","#7CA82D","Missing textures and glitching rocks fill your view.","Spooky. You might want to tread lightly, who knows if you'll fall through a missing hitbox or find an InvalidPositionException.");
-    new Biome("grove","#ffffff","A magical grove.","You wake up with a lamp over here. The only artificial light source in the world. No biggie.");
-    new Biome("desert","#DFA120","Endless dunes.","A desert with sand. Shocking. What else, cacti?");
-    new Biome("ocean","#2C76B3","A big lake.","Perhaps too big. If it were smaller, you might call it a puddle. But this... this is no puddle. This is a lake. Or even bigger. A sea perhaps.");
-    new Biome("abyss","#222A35","The light doesn't reach here.","The darkness is impenetrable. You step, trudge, stumble on through unknown territory. Your senses seem to betray you, as a confusion thicker than the fog begins to set in. You aren't supposed to be here. But where is here, even?");
-    
     menus[0] = pauseMenu;
     menus[1] = constructionsMenu;
     menus[2] = eventsMenu;
-    
-    String[] templateContent = new String[2];
-    templateContent[0] = "This is the first line of the template event. Stellaris offers a wide array of mechanics to entertain the player over hundreds of years of in-game time, or hours of real life time, but my favorite mechanic is the Crises. Not because they're particularly creative or unique or interesting-in their simplest form they're simply the bad guys that the player needs to throw fleets at-but because they represent an idealogy within the game's design, to give the player freedom to do whatever they want within the game.";
-    templateContent[1] = "To explain a little further about this 'freedom' of the player, we have to learn what exactly Stellaris is. Some people call it a micromanagement game where you control a space empire, and yes, it's that, but to me specifically, it is a roleplaying game. A game where you can imagine the machinations of a massive gestalt mind, or the actions of a megacorporation turned interstellar, or the successes of a technocratic nation. The game is about furthering your own fantasy of what you want. Cool.";
-    EventOption[] options = new EventOption[1];
-    options[0] = new EventOption(
-            "Template option one.",
-            "You purchase the game Stellaris.",
-            new ResourceList(),
-            new Condition[0],
-            new Consequence[0]
-    );
-    
-    Event.currentlyDisplayed = new Event(
-            "template",
-            "A template event.",
-            "areas/forest.png",
-            templateContent,
-            new EventOption[0],
-            new Consequence[0],
-            new String[0]
-    );
-    
-    displayEvent(Event.currentlyDisplayed);
     
     //hardcoded for now
     displayTile(0,0);    
@@ -198,6 +259,7 @@ public class GameController implements Initializable {
     
     moveMapTo(0,0);
     displayAreaData(0,0);
+    hideDarkBg();
   }
   
   @FXML private void clickQuit(ActionEvent event) throws Exception {

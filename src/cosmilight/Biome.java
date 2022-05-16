@@ -48,4 +48,12 @@ public class Biome {
   public String getDesc() {
     return areaDesc;
   }
+  
+  static public void generateTemplates() {
+    new Biome("templains","#7CA82D","Missing textures and glitching rocks fill your view.","Spooky. You might want to tread lightly, who knows if you'll fall through a missing hitbox or find an InvalidPositionException.");
+    new Biome("grove","#ffffff","A magical grove.","You wake up with a lamp over here. The only artificial light source in the world. No biggie.");
+    new Biome("desert","#DFA120","Endless dunes.","A desert with sand. Shocking. What else, cacti?");
+    new Biome("ocean","#2C76B3","A big lake.","Perhaps too big. If it were smaller, you might call it a puddle. But this... this is no puddle. This is a lake. Or even bigger. A sea perhaps.");
+    new Biome("abyss","#222A35","The light doesn't reach here.","The darkness is impenetrable. You step, trudge, stumble on through unknown territory. Your senses seem to betray you, as a confusion thicker than the fog begins to set in. You aren't supposed to be here. But where is here, even?");
+  }
 }

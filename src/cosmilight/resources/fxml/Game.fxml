@@ -69,7 +69,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </FlowPane>
-                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="0.0" style="-fx-padding: 10;" styleClass="color-seed">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" prefHeight="69.0" prefWidth="0.0" style="-fx-padding: 10;" styleClass="color-seeds">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tinyHeader" text="Seeds">
                                        <FlowPane.margin>
@@ -144,7 +144,7 @@
                         </ScrollPane>
                         <VBox alignment="CENTER" prefHeight="165.0" prefWidth="250.0" style="-fx-padding: 10 0;">
                            <children>
-                              <Button fx:id="exploreButton" mnemonicParsing="false" onAction="#openExploreMenu" prefHeight="0.0" prefWidth="200.0">
+                              <Button fx:id="exploreButton" mnemonicParsing="false" onAction="#exploreCurrentTile" prefHeight="0.0" prefWidth="200.0">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -476,9 +476,9 @@
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                                  <children>
-                                    <ImageView fitHeight="231.0" fitWidth="385.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="eventImage" fitHeight="231.0" fitWidth="385.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/areas/grove.png" />
+                                          <Image url="@../img/areas/void.png" />
                                        </image>
                                     </ImageView>
                                     <Text fx:id="eventHeader" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="eventHeader" textAlignment="CENTER" wrappingWidth="339.0">
@@ -498,7 +498,7 @@
                               </VBox>
                               <VBox fx:id="eventOptionsParent" alignment="CENTER" style="-fx-padding: 10 0;">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0">
+                                    <Button mnemonicParsing="false" onAction="#hideDarkBg" prefHeight="45.0" prefWidth="250.0">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -535,7 +535,7 @@
                                           <Insets bottom="10.0" />
                                        </VBox.margin>
                                     </Button>
-                                    <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0">
+                                    <Button mnemonicParsing="false" onAction="#hideDarkBg" prefHeight="45.0" prefWidth="250.0">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
