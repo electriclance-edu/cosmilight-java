@@ -56,7 +56,7 @@
                         </Button>
                         <HBox alignment="CENTER">
                            <children>
-                              <ImageView fx:id="cheatsIcon" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#toggleCheats" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="cheatsIcon" disable="true" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#toggleCheats" opacity="0.26" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/cheat_disabled.png" />
                                  </image>
@@ -64,7 +64,7 @@
                                     <Insets left="10.0" right="10.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <ImageView fx:id="musicIcon" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#toggleMusic" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="musicIcon" disable="true" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#toggleMusic" opacity="0.26" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/music_disabled.png" />
                                  </image>

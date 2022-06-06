@@ -2,19 +2,18 @@ package cosmilight;
 
 import java.util.ArrayList;
 
-/**
-* @author Dementiabeans
-*/
 //Creation: 3/31/2022
 //note 5/16/2022, lance
 //  unicode is so weiiiiird, why is the water droplet 2 utf-8 strings
-
+/**
+ * Represents a single Resource type in the game, e.g. Water. 
+* @author Dementiabeans
+*/
 public class Resource {
   static private ArrayList<Resource> resources = new ArrayList<Resource>();
   private String id;
   private String name;
   private String symbol;
-  //styleClass = "color-" + id;
 
   public Resource(String id, String name, String symbol) {
     this.id = id;
@@ -44,9 +43,21 @@ public class Resource {
   public String getSymbol() {
     return symbol;
   }
+  /**
+  * Returns the CSS Class of the given resource. Used for coloring text on the Game Screen.
+  *
+  * @author lance l.
+  * @return The CSS Class of the given resource.
+  */
   public String getStyleClass() {
     return "color-" + id;
   }
+  /**
+  * Creates a generic Void resource, used for debug and in exception handling. 
+  *
+  * @author lance l
+  * @return A generic Void resource.
+  */
   static public Resource createVoid() {
     return new Resource("void", "Void", "\u2B24", true);
   }  
@@ -59,7 +70,7 @@ public class Resource {
     throw new InvalidIdException("getResource(): no resource with id '" + id + "' found");
   }
 //  **********************
-//  TEMPLATE
+//  OTHER
 //  **********************
   static public void generateTemplates() {
     new Resource("water", "Water", "\uD83C\uDF22");

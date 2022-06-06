@@ -2,11 +2,11 @@ package cosmilight;
 
 import java.util.ArrayList;
 
+//Creation: 3/31/2022
 /**
+ * Represents a single Event that may happen during the course of the game.
 * @author Dementiabeans
-* 
 */
-//Creation: 3/31/2022s
 
 public class Event {
   public static Event currentlyDisplayed;
@@ -72,70 +72,85 @@ public class Event {
 //  TEMPLATE
 //  **********************
   static public void generateTemplates() {
-    String[] templateContent = new String[2];
-    templateContent[0] = "This is the first paragraph of the template event.";
-    templateContent[1] = "This is the second paragraph of the template event.";
-            
     ResourceList cost = new ResourceList();
-    cost.addResource("water",3);
-    cost.addResource("metal",5);
-    cost.addResource("seeds",1);
-    cost.addResource("energy",1);
-    cost.addResource("error",1);
+    cost.add("water",2);
+    cost.add("metal",3);
+    cost.add("seeds",1);
+    cost.add("energy",1);
     
     EventOption[] options = new EventOption[1];
     options[0] = new EventOption(
-            "Template option one.",
-            "This is the description of the option.",
+            "End the event.",
+            "You have no need to engage with the event.",
             cost,
             new Condition[0],
             new Consequence[0]
     );
     
     new Event(
-            "templateForest",
-            "A template event.",
+            "template",
+            "TEMPLATEHEADER.",
+            "areas/IMAGEFILENAME.png",
+            new String[]{"LINEONE","LINETWO"},
+            options,
+            new Consequence[0],
+            new String[0]
+    );
+    
+    new Event(
+            "tempGrass",
+            "The Howling Winds",
             "areas/forest.png",
-            templateContent,
+            new String[]{"Strong, howling winds had led you towards here, a vast expanse of grass extending beyond the horizon.","Peaceful, yes, but hollow might be a better word, for nothing other than the grass moved as far as you could see."},
             options,
             new Consequence[0],
             new String[0]
     );
     
-    String[] templateTwoContent = new String[2];
-    templateTwoContent[0] = "This is a grove event.";
-    templateTwoContent[1] = "Super cool, desu ne.";
     new Event(
-            "templateGrove",
-            "A second template event.",
+            "tempGrove",
+            "Fragility",
             "areas/grove.png",
-            templateTwoContent,
+            new String[]{"You find yourself in a grove, the vibrance of the foliage around you a stark contrast to the dark world outside.","Despite the colors, it seems almost everything here is dead. Who knew corpses could lie so beautifully?"},
             options,
             new Consequence[0],
             new String[0]
     );
     
-    String[] templateThreeContent = new String[2];
-    templateThreeContent[0] = "Whispers echo through the thick darkness enveloping you.";
-    templateThreeContent[1] = "You really shouldn't be here.";
     new Event(
-            "templateVoid",
-            "A third template event.",
+            "tempDesert",
+            "The Screaming Winds",
             "areas/void.png",
-            templateThreeContent,
+            new String[]{"If the winds howled in the grasslands, here, they moaned. Roared. Growled. Screamed.","While you guess the sands here tampered with the sound, a primal, instinctual part of you tells you to run, in the presence of the roar of the wind","Though, the longer you stayed, the more you felt like running wouldn't be the worst option."},
             options,
             new Consequence[0],
             new String[0]
     );
     
-    String[] templateFourContent = new String[2];
-    templateFourContent[0] = "A vast expanse of nothingness stretches out before you.";
-    templateFourContent[1] = "At least, for a moment, before the shadows reform and you see something wholly novel, yet equally desolate.";
     new Event(
-            "templateVoidTwo",
-            "A fourth template event.",
+            "tempSea",
+            "The Depths' Hum",
             "areas/void.png",
-            templateFourContent,
+            new String[]{"A vibration thrums throughout your entire body, a force seemingly emanating from below the roiling waves.","As to whatever phenomena or automaton or beast slumbers below, all you gleam is that their snores are quite powerful. Gettin shakey round here. Wowzas. Speaking of Shakey, could really go for some mojos rn"},
+            options,
+            new Consequence[0],
+            new String[0]
+    );
+    
+    new Event(
+            "tempVoidTwo",
+            "A Call",
+            "areas/void.png",
+            new String[]{"Whispers echo through the thick darkness enveloping you.","A single thought enters your mind: 'You shouldn't be here.'","You're unsure if that thought is yours, or the void's."},
+            options,
+            new Consequence[0],
+            new String[0]
+    );
+    new Event(
+            "tempVoid",
+            "An Invitation",
+            "areas/void.png",
+            new String[]{"As the shadows part for a short moment, a vast expanse of grey nothingness reveals itself before you.","But the darkness reforms, and you're returned to a familiar, alien darkness."},
             options,
             new Consequence[0],
             new String[0]

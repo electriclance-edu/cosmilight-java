@@ -4,14 +4,14 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
-* @author Dementiabeans
-*/
 //date Creation: 3/30/2022
 //thought 4/24/2022, Lance
 //  should time be in a separate TimeManager.java file? 
 //  cause i mean space-time is separate for a reason
-
+/**
+ * Represents a single game World and data associated with that, such as the Tile list, the (as-of-yet unimplemented) Day-Night cycle, and queued events. Only one instance exists per Game.
+ * @author Dementiabeans
+*/
 public class World {
   private Tile[][] tiles;
   private ArrayList<Event> randomEventsPool;
@@ -25,19 +25,7 @@ public class World {
   
   public World() {
     worldSize = 200;
-    tiles = generateWorld(new Tile[worldSize][worldSize]);
-    
-    for (Tile[] tileRow : tiles) {
-      Arrays.fill(tileRow, new Tile("abyss"));
-    }
-    
-    //hardcoded world
-    this.setTile(0,0,new Tile("grove"));
-    this.setTile(0,1,new Tile("templains"));
-    this.setTile(-1,0,new Tile("desert"));
-    this.setTile(-1,-1,new Tile("desert"));
-    this.setTile(0,-1,new Tile("ocean"));
-    this.setTile(1,-1,new Tile("ocean"));
+    generateWorld(new Tile[worldSize][worldSize]);
     
     unpaused = true;
   }
@@ -55,7 +43,15 @@ public class World {
     int offset = (relativeToCenter ? worldSize/2 : 0);
     tiles[x + offset][y + offset] = newValue;
   }
-  public Point[] getSurroundings(int x, int y) {
+  /**
+  * Returns an array of coordinates of all 8 points surrounding the given point, including diagonals. 
+  *
+  * @author lance l.
+  * @param x The x coordinate of the point to get the surroundings of.
+  * @param y The y coordinate of the point to get the surroundings of.
+  * @return A list of the coordinates of all 8 points surrounding the given point.
+  */
+  public static Point[] getSurroundings(int x, int y) {
     Point[] translations = {
       new Point(0,1),
       new Point(1,1),
@@ -76,15 +72,20 @@ public class World {
     return points;
   }
   
-  //NOTE: generateWorld() might get deleted cause time restraints
-  private Tile[][] generateWorld(Tile[][] tilemap) {
+  /**
+  * Fills the given 2d array of tiles with a procedurally generated world. 
+  *
+  * @author lance l.
+  * @param tilemap The tilemap to fill with a procedurally generated world.
+  */
+  private void generateWorld(Tile[][] tilemap) {
     
 //    ALGORITHM to generate a world
 //    the world will be structured as follows:
 //      a baseplate of plains, 4k tiles/40% of the world [hardcoded]
-//      50 lines of mountains sprinkled atop, 40 tiles per line, total 2k tiles/20% [rng generated]
 //      10 large blobs of water, ~300 tiles per blob, total 3k tiles/30% [rng generated]
 //      10 smaller blobs of ruins, ~10 tiles each blob, total 100 tiles/1% [rng generated]
+//      50 lines of mountains sprinkled atop, 40 tiles per line, total 2k tiles/20% [rng generated]
 //    the world will contain extra structures, maybe:
 //      5 craters, composing of a crater rim, metallic plains, and a crater center
 //          craters have a radius of 5 tiles
@@ -94,28 +95,65 @@ public class World {
 //    [Code]
 //    among these sections, randomly select a set of 20 points, and a set of 10 points
 //    Ruins are small 
-//    
-//    
-//    
 
+    //initialize tilemap
     Tile[] tilerow;
     for (int y = 0; y < tilemap.length; y++) {
       tilerow = tilemap[y];
-      for (int x = 0; x < tilerow.length; x++) {
-        //TODO: for each tile, generate stuffs
+    }
+    tiles = tilemap;
+    
+    
+    //generate baseplate
+    for (Tile[] tileRow : tiles) {
+      int rand = Game.get().randInt(3);
+      if (rand == 1) { //abyss for now
+        Arrays.fill(tileRow, new Tile("abyss",new String[]{"tempVoid"}));
+      } else if (rand == 2) {
+        Arrays.fill(tileRow, new Tile("abyss",new String[]{"tempVoidTwo"}));
+      } else {
+        Arrays.fill(tileRow, new Tile("abyss")); 
       }
     }
     
-    return tilemap;
+    //temporary world gen, worldgen will Not work like this
+    int tempRadius = 5;
+    String[] biomes = {"grove","templains","desert","ocean","ocean"};
+    String[] events = {"wah","tempGrass","tempDesert","tempSea","tempSea"};
+    for (int i = -tempRadius; i < tempRadius; i++) {
+      for (int j = -tempRadius; j < tempRadius; j++) {
+        int index = Game.get().randInt(biomes.length) - 1;
+        
+        if (biomes[index].equals("grove")) {
+          this.setTile(i,j,new Tile(biomes[index],new String[]{"tempGrass","tempGrove","tempVoid"}));
+        } else if (Game.get().randInt(5) == 1) {
+          this.setTile(i,j,new Tile(biomes[index],new String[]{events[index]}));
+        } else {
+          this.setTile(i,j,new Tile(biomes[index]));
+        }
+      }
+    }
+    
+    
   }
   
+  /**
+  * Simulates a single timestep of the game, incrementing producer constructs, damaging illuminators, and attempting to trigger random and queued events. 
+  *
+  * @author lance l.
+  */
   public void tick() {
     //increment producers
     //attempt damage
     //check for queued events
   }
   
-  //NOTE: false = paused, true = unpaused
+  /**
+  * Pauses or unpauses time in the game. 
+  *
+  * @author lance l.
+  * @param state The new state of time in the game. False = paused.
+  */
   public void toggleTime(boolean state) {
     unpaused = state;
   }

@@ -2,11 +2,13 @@ package cosmilight;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import javafx.scene.shape.Polygon;
 
+//Creation: 3/31/2022
 /**
+ * Represents a single Tile in the World that the player can walk on. Is associated with a displayed Isotile, and can have one Construct.
 * @author Dementiabeans
 */
-//Creation: 3/31/2022
 
 public class Tile {
   private ArrayList<String> eventIds;
@@ -15,21 +17,13 @@ public class Tile {
   private boolean isDisplayed = false;
   private boolean isWalked = false;
   private boolean hasDevelopment = false;
+  private boolean isAbyss = true;
+  private Polygon isotile;
+  private Construct construct;
   
   public Tile(String biomeId) {
     this.biomeId = biomeId;
     this.eventIds = new ArrayList<String>();
-    
-    if (Game.get().randInt(2) == 2) {
-      if (biomeId.equals("ocean")) {
-        eventIds.add("templateGrove");
-      } else if (biomeId.equals("abyss")) {
-        eventIds.add("templateVoid");
-        eventIds.add("templateVoidTwo");
-      } else {
-        eventIds.add("templateForest");
-      }
-    }
     
     isGenerated = true;
   }
@@ -55,6 +49,9 @@ public class Tile {
   public boolean isWalked() {
     return isWalked;
   }
+  public boolean isAbyss() {
+    return isAbyss;
+  }
   public boolean hasDevelopment() {
     return hasDevelopment;
   }
@@ -64,14 +61,32 @@ public class Tile {
   public Biome getBiome() {
     return Biome.getBiomeById(biomeId);
   }
+  public Polygon getIsotile() {
+    return isotile;
+  }
+  public Construct getConstruct() {
+    return construct;
+  }
 //  **********************
 //  SETTERS
 //  **********************
   public void setDisplayed(boolean state) {
     isDisplayed = state;
   }
-  public void isWalked(boolean state) {
+  public void setWalked(boolean state) {
     isWalked = state;
+  }
+  public void setAbyss(boolean state) {
+    isAbyss = state;
+  }
+  public void setDevelopment(boolean state) {
+    hasDevelopment = state;
+  }
+  public void setIsotile(Polygon tile) {
+    isotile = tile;
+  }
+  public void setConstruct(Construct construct) {
+    this.construct = construct;
   }
 //  **********************
 //  OTHERS

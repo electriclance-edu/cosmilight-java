@@ -1,8 +1,5 @@
 package cosmilight;
 
-/**
-* @author Dementiabeans
-*/
 //Creation: 3/30/2022
 //note 4/16/2022, lance
 //  i spent an hour trying to figure out how to parse JSON
@@ -21,8 +18,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 
-//hi
-
+/**
+ * Represents a single run of the game, and as such holds all data that can be associated with a single playthrough, such as World and Player data.
+* @author Dementiabeans
+*/
 public class Game {
   
   private static Game currentGame;
@@ -33,6 +32,7 @@ public class Game {
   private Resource[] resources; //move to respective class
   private Biome[] biome; //move to respective class
   private ConstructionType[] constructionTypes; //move to respective class
+  private boolean cheats;
    
   public Game(boolean cheats) {
     rand = new Random(seed);
@@ -41,6 +41,7 @@ public class Game {
     Biome.generateTemplates();
     Event.generateTemplates();
     Resource.generateTemplates();
+    ConstructableType.generateTemplates();
     
     world = new World();
     player = new Player(cheats);
@@ -70,6 +71,9 @@ public class Game {
   }
   public Tile getTile(int x, int y) {
     return world.getTile(x, y);
+  }
+  public boolean hasCheats() {
+    return cheats;
   }
 //  **********************
 //  XML GENERATORS

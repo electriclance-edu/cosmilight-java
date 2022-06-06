@@ -15,7 +15,6 @@ Button {
     -fx-background-color: #333F50;
     -fx-effect:dropshadow(three-pass-box, #222A35, 0, 0, 0, 5px);
     -fx-translate-y:0;
-    -fx-margin:0 0 10px 0;
     -fx-text-fill: #D9D9D9;
 }
 Button:armed {
@@ -69,6 +68,10 @@ ScrollPane {
 .buttonRed {
     -fx-background-color: #B7544B;
     -fx-effect:dropshadow(three-pass-box, #542522, 0, 0, 0, 5px);
+}
+.constructionTile {
+    -fx-padding:10px;
+    -fx-background-color:rgba(80,110,130,0.25);
 }
 
 

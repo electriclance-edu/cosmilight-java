@@ -1,10 +1,11 @@
 package cosmilight;
 
+//Creation: 3/31/2022
 /**
+ * Represents an option that may be taken during an Event, with corresponding consequences and costs.
 * @author Dementiabeans
 * 
 */
-//Creation: 3/31/2022
 
 public class EventOption {
   private String title;

@@ -39,6 +39,7 @@ public class StartController implements Initializable {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/fxml/Game.fxml")); //load fxml
     Scene scene = loader.load(); //generate Game scene
     
+    DisplayManager.gameScene = scene;
     DisplayManager.gameStage = stage; //set window for DisplayManager
     DisplayManager.gameController = loader.getController(); //set controller for DisplayManager
     
@@ -65,7 +66,6 @@ public class StartController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle rb){
     initializeIcons();
-    System.out.println(musicIcons[0]);
   }  
   private void initializeIcons() {
     musicIcons[0] = new Image(getClass().getResourceAsStream("resources/img/music_disabled.png"));
